@@ -1,7 +1,12 @@
+// JavaScript
+
 const cards = document.querySelectorAll('.memory-card');
 const timerElement = document.getElementById('timer');
 const scoreElement = document.getElementById('score');
+const bestScoreElement = document.getElementById('best-score');
 const startButton = document.getElementById('start-button');
+const resetButton = document.getElementById('reset-button');
+
 
 let hasFlippedCard = false;
 let lockBoard = false;
@@ -10,16 +15,58 @@ let score = 0;
 let timer = 60;
 let timerInterval;
 let matches = 0;
+let selectedCards = []; // Array to store the randomly selected cards for the game
+let bestScore = localStorage.getItem('bestScore') || 0; // Get the best score from localStorage
+
+
+
+
 
 startButton.addEventListener('click', startGame);
+resetButton.addEventListener('click', resetGame);
+
+
+
+
+// Define an array of extra cards
+const extraCards = [
+  // Add your extra card elements here
+];
+
+
+
+
+
 
 function startGame() {
   startButton.disabled = true; // Disable the start button once the game starts
-  resetBoardAndShuffle();
-  resetScore();
-  resetTimer();
+  selectedCards = selectRandomCards();
+  shuffleCards();
   startTimer();
 }
+
+
+function resetGame() {
+  resetBoardAndShuffle();
+  score = 0;
+  timer = 60;
+  matches = 0;
+  scoreElement.textContent = `Score: ${score}`;
+  timerElement.textContent = `Timer: ${timer}`;
+  stopTimer();
+  startButton.disabled = false; // Enable the start button
+
+  scoreElement.classList.remove('blue', 'teal', 'purple');
+  timerElement.classList.remove('low'); // Reset timer color
+}
+
+// Function to select a random subset of cards from the extraCards pool
+function selectRandomCards() {
+  const shuffledCards = extraCards.sort(() => Math.random() - 0.5);
+  return shuffledCards.slice(0, 6); // Select 6 random cards for the game
+}
+
+
 
 function flipCard() {
   if (lockBoard) return;
@@ -80,22 +127,54 @@ function resetBoardAndShuffle() {
   resetBoard();
   matches = 0;
   shuffleCards();
+  
 }
 
+
+
+// Function to update the color of the score based on different thresholds
+function updateScoreColor() {
+  scoreElement.textContent = `Score: ${score}`;
+
+  scoreElement.classList.remove('blue', 'teal', 'purple');
+
+  if (score >= 6 && score < 12) {
+    scoreElement.classList.add('blue');
+  } else if (score >= 12 && score < 18) {
+    scoreElement.classList.add('teal');
+  } else if (score >= 18) {
+    scoreElement.classList.add('purple');
+  }
+}
+
+
+
+// Scores
 function incrementScore() {
   score++;
   scoreElement.textContent = `Score: ${score}`;
+  updateScoreColor();
 }
 
-function resetScore() {
-  score = 0;
-  scoreElement.textContent = `Score: ${score}`;
+
+
+
+// Update the timer element to flash red when below 10 seconds
+function updateTimerDisplay() {
+  timerElement.textContent = `Timer: ${timer}`;
+
+  if (timer < 10) {
+    timerElement.classList.add('low');
+  } else {
+    timerElement.classList.remove('low');
+  }
 }
 
+// Modify the startTimer function to call the updated updateTimerDisplay function
 function startTimer() {
   timerInterval = setInterval(() => {
     timer--;
-    timerElement.textContent = `Timer: ${timer}`;
+    updateTimerDisplay();
 
     if (timer === 0) {
       stopGame();
@@ -103,18 +182,25 @@ function startTimer() {
   }, 1000);
 }
 
+
+
+
+
 function stopTimer() {
   clearInterval(timerInterval);
-}
-
-function resetTimer() {
-  timer = 60;
-  timerElement.textContent = `Timer: ${timer}`;
 }
 
 function stopGame() {
   stopTimer();
   cards.forEach(card => card.removeEventListener('click', flipCard));
+
+  if (score > bestScore) {
+    bestScore = score;
+    localStorage.setItem('bestScore', bestScore); // Save the best score to localStorage
+  }
+
+  bestScoreElement.textContent = `Best Score: ${bestScore}`;
+
   // Display final score or perform any other actions you want.
   console.log('Game Over! Final Score:', score);
 }
@@ -129,3 +215,4 @@ function shuffleCards() {
 }
 
 shuffleCards();
+
