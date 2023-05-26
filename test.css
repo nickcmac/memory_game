@@ -152,3 +152,17 @@ body {
     text-align: center;
   }
 }
+
+
+/* Styles for landscape mode */
+@media only screen and (max-width: 600px) and (orientation: landscape) {
+  .memory-game {
+    width: 70%; /* Increase the width to occupy more space in landscape mode */
+    height: 70%; /* Reduce the height to fit the game on smaller screens */
+  }
+
+  .memory-card {
+    width: calc(33.333% - 10px); /* Adjust the width to fit more cards on smaller screens */
+    height: calc(25% - 10px); /* Adjust the height to fit more cards on smaller screens */
+  }
+}
