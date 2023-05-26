@@ -1,6 +1,7 @@
 const cards = document.querySelectorAll('.memory-card');
 const timerElement = document.getElementById('timer');
 const scoreElement = document.getElementById('score');
+const startButton = document.getElementById('start-button');
 
 let hasFlippedCard = false;
 let lockBoard = false;
@@ -8,8 +9,17 @@ let firstCard, secondCard;
 let score = 0;
 let timer = 60;
 let timerInterval;
-let matches = 0
+let matches = 0;
 
+startButton.addEventListener('click', startGame);
+
+function startGame() {
+  startButton.disabled = true; // Disable the start button once the game starts
+  resetBoardAndShuffle();
+  resetScore();
+  resetTimer();
+  startTimer();
+}
 
 function flipCard() {
   if (lockBoard) return;
@@ -37,7 +47,6 @@ function checkForMatch() {
     unflipCards();
   }
 }
-
 
 function disableCards() {
   firstCard.removeEventListener('click', flipCard);
@@ -67,29 +76,22 @@ function resetBoard() {
   [firstCard, secondCard] = [null, null];
 }
 
-
-
-
-
 function resetBoardAndShuffle() {
   resetBoard();
   matches = 0;
   shuffleCards();
 }
 
-
-
-//scores
 function incrementScore() {
   score++;
   scoreElement.textContent = `Score: ${score}`;
 }
 
+function resetScore() {
+  score = 0;
+  scoreElement.textContent = `Score: ${score}`;
+}
 
-
-
-
-//Times
 function startTimer() {
   timerInterval = setInterval(() => {
     timer--;
@@ -103,6 +105,11 @@ function startTimer() {
 
 function stopTimer() {
   clearInterval(timerInterval);
+}
+
+function resetTimer() {
+  timer = 60;
+  timerElement.textContent = `Timer: ${timer}`;
 }
 
 function stopGame() {
@@ -122,4 +129,3 @@ function shuffleCards() {
 }
 
 shuffleCards();
-startTimer();
