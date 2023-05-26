@@ -128,6 +128,15 @@ body {
   cursor: not-allowed;
 }
 
+#best-score{
+  font-size: large;
+  background-color: tomato;
+  padding: 6px;
+  border-radius: 6px;
+  text-align: center;
+}
+
+
 @media only screen and (max-width: 600px) {
   /* Adjustments for screens with a maximum width of 600px */
 
