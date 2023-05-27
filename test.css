@@ -8,6 +8,8 @@ body {
   height: 100vh;
   display: flex;
   background: grey;
+  background-image: url("images/back.png");
+  background-size: cover;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -31,7 +33,7 @@ body {
   transform: scale(1);
   transform-style: preserve-3d;
   transition: transform .4s;
-  box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+  
   
 }
 
@@ -50,7 +52,7 @@ body {
   height: 100%;
   padding: 10px;
   position: absolute;
-  border-radius: 5px;
+  border-radius: 15px;
   background: #1C7CCC;
   backface-visibility: hidden;
 }
@@ -186,12 +188,13 @@ body {
 }
 
 .banner {
-  background-color: tomato;
+ 
   color: black;
   padding: 10px;
   text-align: center;
   width: 100%;
   height: auto;
+  
 }
 
 #start-button:hover {
@@ -209,6 +212,9 @@ body {
   padding: 6px;
   border-radius: 6px;
   text-align: center;
+  
+  
+ 
 }
 
 
@@ -223,3 +229,24 @@ body {
 .flashing {
   animation: flash 1s infinite;
 }
+
+
+/*
+
+.best-scores {
+  width: 10%;
+  height: 30%;
+  margin-left: 2%;
+  display: flex;
+  /* Additional styles for positioning the best scores container */
+
+/*
+#best-scores-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+#best-scores-list li {
+  margin-bottom: 10px;
+}
+*/
