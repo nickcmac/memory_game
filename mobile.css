@@ -8,14 +8,16 @@ body {
   height: 100vh;
   display: flex;
   background: grey;
+  background-image: url("images/O7ZWigt.png");
+  background-size: cover;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
 .memory-game {
-  width: 100%;
-  height: 90vh;
+  width: 90%;
+  height: 80%;
   margin: auto;
   display: flex;
   flex-wrap: wrap;
@@ -24,15 +26,13 @@ body {
 }
 
 .memory-card {
-  width: calc(25% - 10px);
-  height: calc(33.333% - 10px);
+  width: calc(33.33% - 10px);
+  height: calc(25% - 10px);
   margin: 5px;
   position: relative;
   transform: scale(1);
   transform-style: preserve-3d;
   transition: transform .4s;
-  box-shadow: 1px 1px 1px rgba(0,0,0,.3);
-  
 }
 
 .memory-card:active {
@@ -48,9 +48,9 @@ body {
 .back-face {
   width: 100%;
   height: 100%;
-  padding: 3px;
+  padding: 10px;
   position: absolute;
-  border-radius: 5px;
+  border-radius: 15px;
   background: #1C7CCC;
   backface-visibility: hidden;
 }
@@ -60,9 +60,9 @@ body {
 }
 
 #score {
-  font-size: 2vh;
+  font-size: xx-large;
   float: left;
-
+  margin-left: 10%;
   transition: color 0.5s;
 }
 
@@ -136,7 +136,7 @@ body {
 }
 
 #timer {
-  font-size: 3vh;
+  font-size: xx-large;
   color: black;
   transition: color 0.5s;
   text-align: center;
@@ -151,7 +151,7 @@ body {
 #start-button {
   display: block;
   padding: 10px 20px;
-  font-size: 4vh;
+  font-size: 18px;
   background-color: black;
   color: white;
   border: none;
@@ -163,13 +163,12 @@ body {
 #reset-button {
   display: block;
   padding: 10px 20px;
-  font-size: 4vh;
+  font-size: 18px;
   background-color: teal;
   float: right;
 }
 
 .banner {
-  background-color: tomato;
   color: black;
   padding: 10px;
   text-align: center;
@@ -187,11 +186,14 @@ body {
 }
 
 #best-score {
-  font-size: 2.5vh;
+  font-size: large;
   background-color: tomato;
   padding: 6px;
   border-radius: 6px;
   text-align: center;
+  float: right;
+  width: 5%;
+  position: relative;
 }
 
 @keyframes flash {
