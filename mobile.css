@@ -26,7 +26,7 @@
   .memory-card {
     width: calc(50% - 10px);
     height: calc(25.67% - 20px);
-    margin: 5px;
+    margin: 1px;
     position: relative;
     transform: scale(1);
     transform-style: preserve-3d;
@@ -47,7 +47,7 @@
   .back-face {
     width: 100%;
     height: 100%;
-    padding: 20px;
+    padding: 3px;
     position: absolute;
     border-radius: 5px;
     background: #1C7CCC;
