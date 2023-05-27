@@ -1,3 +1,4 @@
+/* Default styles for non-mobile screens */
 * {
   padding: 0;
   margin: 0;
@@ -60,30 +61,14 @@ body {
 
 #score {
   font-size: xx-large;
-  float: left;
-  margin-left: 10%;
-  transition: color 0.5s;
-}
-
-#score.blue {
-  color: blue;
-}
-
-#score.teal {
-  color: teal;
-}
-
-#score.purple {
-  color: purple;
+  grid-column: 1;
 }
 
 #timer {
   font-size: xx-large;
-  color: black;
+  color: #1C7CCC;
   transition: color 0.5s;
   text-align: center;
-  float: left;
-  margin-left: 30%;
 }
 
 #timer.low {
@@ -94,12 +79,11 @@ body {
   display: block;
   padding: 10px 20px;
   font-size: 18px;
-  background-color: black;
+  background-color: #4CAF50;
   color: white;
   border: none;
   cursor: pointer;
-  margin-left: 10%;
-  float: left;
+  grid-column: 3;
 }
 
 #reset-button {
@@ -111,16 +95,16 @@ body {
 }
 
 .banner {
-  background-color: tomato;
+  background-color: #6eb3eb;
   color: black;
-  padding: 10px;
+  padding: 20px;
   text-align: center;
   width: 100%;
   height: auto;
 }
 
 #start-button:hover {
-  background-color: blue
+  background-color: #45a049;
 }
 
 #start-button:disabled {
@@ -128,18 +112,8 @@ body {
   cursor: not-allowed;
 }
 
-#best-score{
-  font-size: large;
-  background-color: tomato;
-  padding: 6px;
-  border-radius: 6px;
-  text-align: center;
-}
-
-
-@media only screen and (max-width: 600px) {
-  /* Adjustments for screens with a maximum width of 600px */
-
+/* Styles for mobile screens in portrait orientation */
+@media only screen and (max-width: 600px) and (orientation: portrait) {
   .memory-game {
     width: 90%;
     height: 60%;
@@ -162,16 +136,15 @@ body {
   }
 }
 
-
-/* Styles for landscape mode */
-@media only screen and (max-width: 600px) and (orientation: landscape) {
+/* Styles for mobile screens in landscape orientation */
+@media only screen and (max-width: 900px) and (orientation: landscape) {
   .memory-game {
-    width: 70%; /* Increase the width to occupy more space in landscape mode */
-    height: 70%; /* Reduce the height to fit the game on smaller screens */
+    width: 80%;
+    height: 60%;
   }
 
   .memory-card {
-    width: calc(33.333% - 10px); /* Adjust the width to fit more cards on smaller screens */
-    height: calc(25% - 10px); /* Adjust the height to fit more cards on smaller screens */
+    width: calc(33.33% - 10px);
+    height: calc(25% - 10px);
   }
 }
