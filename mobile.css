@@ -1,138 +1,211 @@
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-  }
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  background: grey;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.memory-game {
+  width: 80%;
+  height: 70vh;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  perspective: 1000px;
+  position: relative;
+}
+
+.memory-card {
+  width: calc(25% - 10px);
+  height: calc(33.333% - 10px);
+  margin: 5px;
+  position: relative;
+  transform: scale(1);
+  transform-style: preserve-3d;
+  transition: transform .4s;
+  box-shadow: 1px 1px 1px rgba(0,0,0,.3);
   
-  body {
-    height: 100vh;
-    display: flex;
-    background: grey;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+}
+
+.memory-card:active {
+  transform: scale(0.97);
+  transition: transform .2s;
+}
+
+.memory-card.flip {
+  transform: rotateY(180deg);
+}
+
+.front-face,
+.back-face {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  position: absolute;
+  border-radius: 5px;
+  background: #1C7CCC;
+  backface-visibility: hidden;
+}
+
+.front-face {
+  transform: rotateY(180deg);
+}
+
+#score {
+  font-size: 3vh;
+  float: left;
+  margin-left: 10%;
+  transition: color 0.5s;
+}
+
+#score.blue {
+  color: blue;
+}
+
+#score.teal {
+  color: teal;
+}
+
+#score.purple {
+  color: purple;
+}
+
+#score.gold {
+  animation: gold-flash 2s linear infinite;
+}
+
+@keyframes gold-flash {
+  0% {
+    color: gold;
+    opacity: 1;
   }
-  
-  .memory-game {
-    width: 100%;
-    height: 90%;
-    margin: auto;
-    display: flex;
-    flex-wrap: wrap;
-    perspective: 1000px;
-    position: relative;
+  50% {
+    opacity: 0;
   }
-  
-  .memory-card {
-    width: calc(50% - 10px);
-    height: calc(25.67% - 20px);
-    margin: 1px;
-    position: relative;
-    transform: scale(1);
-    transform-style: preserve-3d;
-    transition: transform .4s;
-    box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+  100% {
+    color: gold;
+    opacity: 1;
   }
-  
-  .memory-card:active {
-    transform: scale(0.97);
-    transition: transform .2s;
-  }
-  
-  .memory-card.flip {
-    transform: rotateY(180deg);
-  }
-  
-  .front-face,
-  .back-face {
-    width: 100%;
-    height: 100%;
-    padding: 3px;
-    position: absolute;
-    border-radius: 5px;
-    background: #1C7CCC;
-    backface-visibility: hidden;
-  }
-  
-  .front-face {
-    transform: rotateY(180deg);
-  }
-  
-  #score {
-    font-size: xx-large;
-    text-align: center;
-    margin-bottom: 10px;
-    transition: color 0.5s;
-  }
-  
-  #score.blue {
-    color: blue;
-  }
-  
-  #score.teal {
-    color: teal;
-  }
-  
-  #score.purple {
-    color: purple;
-  }
-  
-  #timer {
-    font-size: xx-large;
-    color: black;
-    transition: color 0.5s;
-    text-align: center;
-    margin-bottom: 10px;
-  }
-  
-  #timer.low {
+}
+
+#score.rainbow {
+  animation: rainbow-flash 2s linear infinite;
+}
+
+@keyframes rainbow-flash {
+  0% {
     color: red;
+    text-shadow: 0 0 10px red, 0 0 20px red, 0 0 30px red;
   }
-  
-  #start-button {
-    display: block;
-    padding: 10px 20px;
-    font-size: 18px;
-    background-color: black;
-    color: white;
-    border: none;
-    cursor: pointer;
-    margin: auto;
-    margin-bottom: 10px;
+  14% {
+    color: orange;
+    text-shadow: 0 0 10px orange, 0 0 20px orange, 0 0 30px orange;
   }
-  
-  #reset-button {
-    display: block;
-    padding: 10px 20px;
-    font-size: 18px;
-    background-color: teal;
-    margin: auto;
+  28% {
+    color: yellow;
+    text-shadow: 0 0 10px yellow, 0 0 20px yellow, 0 0 30px yellow;
   }
-  
-  .banner {
-    background-color: tomato;
-    color: black;
-    padding: 10px;
-    text-align: center;
-    width: 100%;
-    height: auto;
+  42% {
+    color: green;
+    text-shadow: 0 0 10px green, 0 0 20px green, 0 0 30px green;
   }
-  
-  #start-button:hover {
-    background-color: blue
+  57% {
+    color: blue;
+    text-shadow: 0 0 10px blue, 0 0 20px blue, 0 0 30px blue;
   }
-  
-  #start-button:disabled {
-    background-color: #808080;
-    cursor: not-allowed;
+  71% {
+    color: indigo;
+    text-shadow: 0 0 10px indigo, 0 0 20px indigo, 0 0 30px indigo;
   }
-  
-  #best-score {
-    font-size: large;
-    background-color: tomato;
-    padding: 6px;
-    border-radius: 6px;
-    text-align: center;
-    margin-bottom: 10px;
+  85% {
+    color: violet;
+    text-shadow: 0 0 10px violet, 0 0 20px violet, 0 0 30px violet;
   }
-  
+  100% {
+    color: red;
+    text-shadow: 0 0 10px red, 0 0 20px red, 0 0 30px red;
+  }
+}
+
+#timer {
+  font-size: 3vh;
+  color: black;
+  transition: color 0.5s;
+  text-align: center;
+  float: left;
+  margin-left: 30%;
+}
+
+#timer.low {
+  color: red;
+}
+
+#start-button {
+  display: block;
+  padding: 10px 20px;
+  font-size: 4vh;
+  background-color: black;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-left: 10%;
+  float: left;
+}
+
+#reset-button {
+  display: block;
+  padding: 10px 20px;
+  font-size: 4vh;
+  background-color: teal;
+  float: right;
+}
+
+.banner {
+  background-color: tomato;
+  color: black;
+  padding: 10px;
+  text-align: center;
+  width: 100%;
+  height: auto;
+}
+
+#start-button:hover {
+  background-color: blue;
+}
+
+#start-button:disabled {
+  background-color: #808080;
+  cursor: not-allowed;
+}
+
+#best-score {
+  font-size: 2.5vh;
+  background-color: tomato;
+  padding: 6px;
+  border-radius: 6px;
+  text-align: center;
+}
+
+@keyframes flash {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.flashing {
+  animation: flash 1s infinite;
+}
