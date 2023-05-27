@@ -230,7 +230,29 @@ const extraCards = [
   { id: 14, name: "Voltorb", imgUrl: "images/Voltorb.BS.67.webp" },
   { id: 15, name: "Vulpix", imgUrl: "images/Vulpix.BS.68.webp" },
   { id: 16, name: "Zapdos", imgUrl: "images/Zapdos.BS.16.webp" },
+
+  { id: 17, name: "Baxcalibur", imgUrl: "images/Baxcalibur.PALEN.210.47759.webp" },
+  { id: 18, name: "Blastoise-Piplup", imgUrl: "images/Blastoise-Piplup-GX.CEC.38.30122.webp" },
+  { id: 19, name: "Braixen", imgUrl: "images/Charizard-Braixen-GX.CEC.22.30121.webp" },
+  { id: 20, name: "Charmander", imgUrl: "images/Charmander.RG.113.webp" },
+  { id: 21, name: "Chi-Yu", imgUrl: "images/Chi-Yu-ex.PALEN.40.47758.webp" },
+  { id: 22, name: "Lunatone", imgUrl: "images/Lunatone.DX.36.webp" },
+  { id: 23, name: "Magcargo", imgUrl: "images/Magcargo.DX.20.webp" },
+  { id: 24, name: "Naganadel", imgUrl: "images/Naganadel-Guzzlord-GX.CEC.158.30126.webp" },
+  { id: 25, name: "Tangela", imgUrl: "images/Tangela.BS.66.webp" },
+  { id: 26, name: "Ninetales", imgUrl: "images/Ninetales.BS.12.webp" },
+  { id: 27, name: "Paras", imgUrl: "images/Paras.RG.72.webp" },
+  { id: 28, name: "Tyranitar", imgUrl: "images/Tyranitar.SV2EN.222.47689.webp" },
+  { id: 29, name: "Manectric", imgUrl: "images/Manectric.DX.38.webp" },
+  { id: 30, name: "Kyogre", imgUrl: "images/Team-Aquas-Kyogre.MA.3.webp" },
+  { id: 31, name: "Snivy", imgUrl: "images/Venusaur-Snivy-GX.CEC.1.30120.webp" },
+  { id: 32, name: "Solgaleo", imgUrl: "images/Solgaleo-Lunala-GX.CEC.75.30124.webp" },
+  
   
 
   // Add your extra card elements here
 ];
+
+/*
+{ id: , name: "", imgUrl: "images" },
+*/
