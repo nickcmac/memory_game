@@ -120,7 +120,7 @@ body {
 }
 
 #start-button:hover {
-  background-color: blue
+  background-color: blue;
 }
 
 #start-button:disabled {
@@ -136,9 +136,8 @@ body {
   text-align: center;
 }
 
-
 @media only screen and (max-width: 600px) {
-  /* Adjustments for screens with a maximum width of 600px */
+  /* Adjustments for screens with a maximum width of 600px (Portrait) */
 
   .memory-game {
     width: 90%;
@@ -162,9 +161,9 @@ body {
   }
 }
 
-
-/* Styles for mobile screens in landscape orientation */
 @media only screen and (max-width: 900px) and (orientation: landscape) {
+  /* Adjustments for screens with a maximum width of 900px in Landscape orientation */
+
   .memory-game {
     width: 80%;
     height: 60%;
