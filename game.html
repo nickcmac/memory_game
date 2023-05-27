@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Memory Game</title>
+  <link rel="stylesheet" href="test.css">
+  <link rel="stylesheet" media="screen and (max-width: 600px)" href="mobile.css"> <!-- Link to your mobile-specific CSS file -->
+</head>
+<header class="banner">
+  <h1>
+    <div id="timer">Timer: 0</div>
+    <button id="start-button">Start Game</button>
+    <div id="score">Score: 0</div>
+    <button id="reset-button">Reset</button>
+  </h1>
+</header>
+<body>
+  
+  <section class="memory-game">
+    
+    <div class="memory-card" data-pokemon="">
+      <img class="front-face" src="" alt="Charizard" />
+      <img class="back-face" src="images/background.jpg" alt="Pokemon-card-back" />
+    </div>
+    <div class="memory-card" data-pokemon="">
+      <img class="front-face" src="" alt="Charizard" />
+      <img class="back-face" src="images/background.jpg" alt="Pokemon-card-back" />
+    </div>
+
+    <div class="memory-card" data-pokemon="">
+      <img class="front-face" src="" alt="Dewgong" />
+      <img class="back-face" src="images/background.jpg" alt="Pokemon-card-back" />
+    </div>
+    <div class="memory-card" data-pokemon="">
+      <img class="front-face" src="" alt="Dewgong" />
+      <img class="back-face" src="images/background.jpg" alt="Pokemon-card-back" />
+    </div>
+
+    <div class="memory-card" data-pokemon="">
+      <img class="front-face" src="" alt="Ivysaur" />
+      <img class="back-face" src="images/background.jpg" alt="Pokemon-card-back" />
+    </div>
+    <div class="memory-card" data-pokemon="">
+      <img class="front-face" src="" alt="Ivysaur" />
+      <img class="back-face" src="images/background.jpg" alt="Pokemon-card-back" />
+    </div>
+
+    <div class="memory-card" data-pokemon="">
+      <img class="front-face" src="" alt="" />
+      <img class="back-face" src="images/background.jpg" alt="Pokemon-card-back" />
+    </div>
+    <div class="memory-card" data-pokemon="">
+      <img class="front-face" src="" alt="Mewtwo" />
+      <img class="back-face" src="images/background.jpg" alt="Pokemon-card-back" />
+    </div>
+
+    <div class="memory-card" data-pokemon="">
+      <img class="front-face" src="" alt="Raichu" />
+      <img class="back-face" src="images/background.jpg" alt="Pokemon-card-back" />
+    </div>
+    <div class="memory-card" data-pokemon="">
+      <img class="front-face" src="" alt="Raichu" />
+      <img class="back-face" src="images/background.jpg" alt="Pokemon-card-back" />
+    </div>
+
+    <div class="memory-card" data-pokemon="">
+      <img class="front-face" src=""alt="Zapdos" />
+      <img class="back-face" src="images/background.jpg" alt="Pokemon-card-back" />
+    </div>
+    <div class="memory-card" data-pokemon="">
+      <img class="front-face" src="" alt="Zapdos" />
+      <img class="back-face" src="images/background.jpg" alt="Pokemon-card-back" />
+    </div>
+  </section>
+  <p id="best-score">Best Score:</p>
+  <script src="pairs.js"></script>
+</body>
+</html>
