@@ -348,7 +348,7 @@ const extraCards = [
 
 /*
 //THe High Res Data set for pokemon
-[
+const extraCards =  [
   { "id": 1, "name": "Blissey", "imgUrl": "images/res/Blissey.SV1EN.145.47199.webp" },
   { "id": 2, "name": "Breloom", "imgUrl": "images/res/Breloom.SV1EN.4.47076.webp" },
   { "id": 3, "name": "Buizel", "imgUrl": "images/res/Buizel.SV1EN.46.47114.webp" },
