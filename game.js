@@ -30,9 +30,32 @@ resetButton.addEventListener('click', resetGame);
 
 // Define an array of extra cards
 const extraCards = [
+  { pokemon: "Charizard", imageUrl: "images/Charizard.BS.4.webp" },
+  { pokemon: "Pikachu", imageUrl: "images/Pikachu.BS.25.webp" },
+  { pokemon: "Dark-Alakazam", imageUrl: "images/Dark-Alakazam.TR.1.webp" },
+  { pokemon: "PDark-Vileplume", imageUrl: "images/Dark-Vileplume.TR.13.webp" },
+  { pokemon: "Dewgong", imageUrl: "images/Dewgong.BS.25.webp" },
+  { pokemon: "Espeon-GX", imageUrl: "images/Espeon-GX.SM1.140.13693 (1).webp" },
+  { pokemon: "Ivysaur", imageUrl: "images/Ivysaur.BS.30.webp" },
+  { pokemon: "Lapras", imageUrl: "images/Lapras.FO.25.webp" },
+  { pokemon: "Mewtwo", imageUrl: "images/Mewtwo.BS.10.webp" },
+  { pokemon: "Moltres", imageUrl: "images/Moltres.FO.27.webp" },
+  { pokemon: "Poliwhirl", imageUrl: "images/Poliwhirl.BS.38.webp" },
+  { pokemon: "Raichu", imageUrl: "images/Raichu.BS.14.webp" },
+  { pokemon: "Starmie", imageUrl: "images/Starmie.BS.64.webp" },
+  { pokemon: "Voltorb", imageUrl: "images/Voltorb.BS.67.webp" },
+  { pokemon: "Vulpix", imageUrl: "images/Vulpix.BS.68.webp" },
+  { pokemon: "Zapdos", imageUrl: "images/Zapdos.BS.16.webp" },
+  
+
   // Add your extra card elements here
 ];
 
+// Function to select a random subset of cards from the extraCards pool
+function selectRandomCards() {
+  const shuffledCards = extraCards.sort(() => Math.random() - 0.5);
+  return shuffledCards.slice(0, 6); // Select 6 random cards for the game
+}
 
 
 
@@ -60,11 +83,9 @@ function resetGame() {
   timerElement.classList.remove('low'); // Reset timer color
 }
 
-// Function to select a random subset of cards from the extraCards pool
-function selectRandomCards() {
-  const shuffledCards = extraCards.sort(() => Math.random() - 0.5);
-  return shuffledCards.slice(0, 6); // Select 6 random cards for the game
-}
+
+
+
 
 
 
@@ -115,7 +136,7 @@ function unflipCards() {
     secondCard.classList.remove('flip');
 
     resetBoard();
-  }, 1500);
+  }, 800);
 }
 
 function resetBoard() {

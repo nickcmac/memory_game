@@ -14,8 +14,8 @@ body {
 }
 
 .memory-game {
-  width: 45%;
-  height: 80%;
+  width: 55%;
+  height: 90%;
   margin: auto;
   display: flex;
   flex-wrap: wrap;
@@ -57,8 +57,6 @@ body {
 .front-face {
   transform: rotateY(180deg);
 }
-
-
 
 #score {
   font-size: xx-large;
@@ -119,12 +117,10 @@ body {
   text-align: center;
   width: 100%;
   height: auto;
-
 }
 
-
 #start-button:hover {
-  background-color: blue
+  background-color: blue;
 }
 
 #start-button:disabled {
@@ -132,29 +128,11 @@ body {
   cursor: not-allowed;
 }
 
-
-
-@media only screen and (max-width: 600px) {
-  /* Adjustments for screens with a maximum width of 600px */
-
-  .memory-game {
-    width: 90%; /* Adjust the width to occupy more space on smaller screens */
-    height: 60%; /* Reduce the height to fit the game on smaller screens */
-  }
-
-  .memory-card {
-    width: calc(50% - 10px); /* Adjust the width to fit more cards on smaller screens */
-    height: calc(16.67% - 10px); /* Adjust the height to fit more cards on smaller screens */
-  }
-
-  .info {
-    flex-wrap: wrap; /* Allow the info elements to wrap on smaller screens */
-    height: auto; /* Remove the fixed height to allow dynamic content */
-    justify-content: center; /* Center the info elements on smaller screens */
-  }
-
-  #score,
-  #timer {
-    text-align: center; /* Center the text within the score and timer elements */
-  }
+#best-score{
+  font-size: large;
+  background-color: tomato;
+  padding: 6px;
+  border-radius: 6px;
+  text-align: center;
 }
+
