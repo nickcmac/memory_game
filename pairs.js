@@ -303,8 +303,6 @@ const extraCards = [
   { "id": 14, name: "Dewgong", imgUrl: "images/old/Dewgong.BS.25.webp" },
   { "id": 15, name: "Ditto", imgUrl: "images/old/Ditto.FO.3.webp" },
   { "id": 16, name: "Dragonair", imgUrl: "images/old/Dragonair.BS.18.webp" },
-  { "id": 17, name: "Dragonite", imgUrl: "images/old/Dragonite.FO.19.webp" },
-  { "id": 18, name: "Dragonite", imgUrl: "images/old/Dragonite.FO.4.webp" },
   { "id": 19, name: "Dratini", imgUrl: "images/old/Dratini.BS.26.webp" },
   { "id": 20, name: "Electrode", imgUrl: "images/old/Electrode.BS.21.webp" },
   { "id": 21, name: "Gyarados", imgUrl: "images/old/Gyarados.BS.6.webp" },
