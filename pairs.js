@@ -442,3 +442,10 @@ const extraCards =  [
   { "id": 111, "name": "Zapdos", "imgUrl": "images/old/Zapdos.BS.16.webp" }
 
 */
+
+
+function Hello() {
+  alert("Hello!\n -To start the game please click the 'START GAME' button.\n\n -The rules are simple, match the card pairs and gain points, gather as many points as possible within 60 seconds!\n\n Have fun!!");
+}
+
+
