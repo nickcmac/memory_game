@@ -1,0 +1,237 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    height: 100vh;
+    display: flex;
+    background: grey;
+    background-image: url("images/back.png");
+    background-size: cover;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .memory-game {
+    width: 60%;
+    height: 90%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    perspective: 1000px;
+    position: relative;
+  }
+  
+  .memory-card {
+    width: calc(25% - 10px);
+    height: calc(33.333% - 10px);
+    margin: 5px;
+    position: relative;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform .4s;
+    
+    
+  }
+  
+  .memory-card:active {
+    transform: scale(0.97);
+    transition: transform .2s;
+  }
+  
+  .memory-card.flip {
+    transform: rotateY(180deg);
+  }
+  
+  .front-face,
+  .back-face {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    position: absolute;
+    border-radius: 15px;
+    background: #1C7CCC;
+    backface-visibility: hidden;
+  }
+  
+  .front-face {
+    transform: rotateY(180deg);
+  }
+  
+  #score {
+    font-size: xx-large;
+    float: left;
+    margin-left: 10%;
+    transition: color 0.5s;
+  }
+  
+  #score.blue {
+    color: blue;
+  }
+  
+  #score.teal {
+    color: teal;
+  }
+  
+  #score.purple {
+    color: purple;
+  }
+  
+  #score.gold {
+    animation: gold-flash 2s linear infinite;
+  }
+  
+  @keyframes gold-flash {
+    0% {
+      color: gold;
+      opacity: 1;
+    
+    }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      color: gold;
+      opacity: 1;
+     
+    }
+  }
+  
+  
+  #score.rainbow {
+    animation: rainbow-flash 2s linear infinite;
+  }
+  
+  @keyframes rainbow-flash {
+    0% {
+      color: red;
+      text-shadow: 0 0 10px red, 0 0 20px red, 0 0 30px red;
+      
+    }
+    14% {
+      color: orange;
+      text-shadow: 0 0 10px orange, 0 0 20px orange, 0 0 30px orange;
+      
+    }
+    28% {
+      color: yellow;
+      text-shadow: 0 0 10px yellow, 0 0 20px yellow, 0 0 30px yellow;
+      
+    }
+    42% {
+      color: green;
+      text-shadow: 0 0 10px green, 0 0 20px green, 0 0 30px green;
+      
+    }
+    57% {
+      color: blue;
+      text-shadow: 0 0 10px blue, 0 0 20px blue, 0 0 30px blue;
+      
+    }
+    71% {
+      color: indigo;
+      text-shadow: 0 0 10px indigo, 0 0 20px indigo, 0 0 30px indigo;
+      
+    }
+    85% {
+      color: violet;
+      text-shadow: 0 0 10px violet, 0 0 20px violet, 0 0 30px violet;
+      
+    }
+    100% {
+      color: red;
+      text-shadow: 0 0 10px red, 0 0 20px red, 0 0 30px red;
+      
+    }
+  }
+  
+  
+  
+  
+  
+  
+  
+  #timer {
+    font-size: xx-large;
+    color: black;
+    transition: color 0.5s;
+    text-align: center;
+    float: left;
+    margin-left: 30%;
+  }
+  
+  #timer.low {
+    color: red;
+  }
+  
+  #start-button {
+    display: block;
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-left: 10%;
+    float: left;
+  }
+  
+  #reset-button {
+    display: block;
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: teal;
+    float: right;
+  }
+  
+  .banner {
+   
+    color: black;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+    height: auto;
+    
+  }
+  
+  #start-button:hover {
+    background-color: blue;
+  }
+  
+  #start-button:disabled {
+    background-color: #808080;
+    cursor: not-allowed;
+  }
+  
+  #best-score{
+    font-size: large;
+    background-color: tomato;
+    padding: 6px;
+    border-radius: 6px;
+    text-align: center;
+    
+    
+   
+  }
+  
+  
+  
+  
+  @keyframes flash {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+  .flashing {
+    animation: flash 1s infinite;
+  }
+  
+  
+
+  
+  
+  
